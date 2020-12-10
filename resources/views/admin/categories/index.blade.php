@@ -4,6 +4,18 @@
 
     <h1>Categories</h1>
 
+    @if(Session::has('deleted_category'))
+
+        <p class="bg-danger">{{session('deleted_category')}}</p>
+
+    @endif
+
+    @if(Session::has('updated_category'))
+
+        <p class="bg-success">{{session('updated_category')}}</p>
+
+    @endif
+
     <div class="row">
     <div class="col-sm-6">
 

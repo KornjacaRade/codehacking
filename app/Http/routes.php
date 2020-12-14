@@ -26,11 +26,11 @@ Route::get('/post/{id}', ['as'=>'home.posts', 'uses'=>'AdminPostsController@post
 
 Route::group(['middleware'=>'admin'], function(){
 
-    Route::get('/admin', function (){
+    Route::get('/admin', ['as'=>'admin.home','uses'=>function (){
 
         return view('admin.index');
 
-    });
+    }]);
 
     Route::resource('admin/users', 'AdminUsersController');
 

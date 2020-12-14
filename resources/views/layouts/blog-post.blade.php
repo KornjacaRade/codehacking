@@ -52,6 +52,10 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+                    <li>
+                        <a href="{{route('admin.home')}}">Admin</a>
+                    </li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->

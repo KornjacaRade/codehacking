@@ -13,11 +13,11 @@
 
             <div class="form-group">
                 <select name="checkBoxArray" id="" class="form-control">
-                    <option value="delete">Delete</option>
+                    <option value="">Delete</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn-primary">
+                <input type="submit" name="delete_all" class="btn-primary">
             </div>
 
      <table class="table">
@@ -39,14 +39,13 @@
              <td>{{$photo->created_at ? $photo->created_at : 'no date'}}</td>
                <td>
 
-                    {!! Form::open(['method'=>'DELETE', 'action'=>['AdminMediaController@destroy', $photo->id]]) !!}
+{{--                   For separate delete button--}}
+{{--                   <input type="hidden" name="photo" value="{{$photo->id}}">--}}
 
+{{--                       <div class="form-group">--}}
+{{--                           <input type="submit" name="delete_single" value="Delete" class="btn-danger">--}}
+{{--                       </div>--}}
 
-                       <div class="form-group">
-                          {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
-                       </div>
-
-                        {!! Form::close() !!}
 
                </td>
            </tr>

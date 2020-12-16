@@ -41,7 +41,7 @@
              <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
              <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
              <td>{{$post->title}}</td>
-             <td>{{str_limit($post->body,30)}}</td>
+             <td>{{strip_tags(str_limit($post->body,30))}}</td>
              <td><a href="{{route('home.posts', $post->id)}}">View post</a></td>
              <td><a href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>
              <td>{{$post->created_at->diffForHumans()}}</td>

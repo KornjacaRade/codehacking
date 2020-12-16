@@ -1,7 +1,10 @@
-@extends('layouts.blog-post')
+@extends('layouts.blog-home')
 
 @section('content')
 
+    <div class="row">
+
+        <div class="col-md-8 pull-left">
 
     <!-- Blog Post -->
 
@@ -10,7 +13,7 @@
 
     <!-- Author -->
     <p class="lead">
-        by <a href="#">{{$post->user->name}}</a>
+        by {{$post->user->name}}
     </p>
 
     <hr>
@@ -21,13 +24,13 @@
     <hr>
 
     <!-- Preview Image -->
-    <img class="img-responsive" src="{{$post->photo->file}}" alt="">
+    <img class="img-responsive" src="{{$post->photo ? $post->photo->file : $post->photoPlaceholder('700x200')}}" alt="">
 
     <hr>
 
     <!-- Post Content -->
 
-    <p>{{$post->body}}</p>
+            <p>{{strip_tags(str_limit($post->body,100))}}</p>
 
     <hr>
 
@@ -54,3 +57,8 @@
     <script id="dsq-count-scr" src="//codehacking.disqus.com/count.js" async></script>
 
 @endsection
+
+        </div>
+
+        @include('includes.front_sidebar')
+    </div>
